@@ -1,0 +1,95 @@
+{% load static %}
+{% load cart_template_tags %}
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>
+			{% block title %}{% endblock title %}
+		</title>
+		<meta charset="utf-8"/>
+		{% block style %}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo_wrapper_left" style="letter-spacing: 0.335em">
+				<a class="homelogolink" href="{% url 'bnsu:start_page' %}">Bangusu</a>
+			</div>
+			<div class="action_wrapper_right">
+				{% if user.is_authenticated %}
+					<a class="loginlink" href="{% url 'account_logout' %}" style="letter-spacing: 0.335em">log out</a>
+				<div class="actions">
+					<div class="nule">{{ request.user|cart_item_count }}</div>
+					<a class="trashlink" href="{% url 'bnsu:order-summary' %}">
+						<img src="{% static 'Bangusu/img/icon/Trash.png' %}" alt="img"/>
+					</a>
+					<button class="menubutton"><img src="{% static 'Bangusu/img/icon/icon_about.png' %}" alt="img" /></button>
+					{% else %}
+						<a class="loginlink" href="{% url 'account_login' %}" style="letter-spacing: 0.335em">log in</a>
+					<div class="actions">
+						<button class="menubutton"><img src="{% static 'Bangusu/img/icon/icon_about.png' %}" alt="img" /></button>
+					{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if messages %}
+			{% for message in messages %}
+				<div class="message_s">{{ message }}</div>
+			{% endfor %}
+		{% endif %}
+		{% block content %}
+		{% endblock %}
+		{% block extra_body %}
+		{% endblock %}
+		<div class="footer">
+			<div class="wewe">
+				<div class="orblock">
+					<div class="text_footer">
+						<p>Our Stores</p>
+						<div> - <a href="#">Find shops nearby</a></div>
+						<div> - <a href="#">List of all our stores</a></div>
+					</div>
+				</div>
+				<div class="orblock">
+					<div class="text_footer">
+						<p>Contacts</p>
+						<div style="margin-right: 34px">By contacting customer service,
+							I consent to the transfer of my data outside of my country / region</div>
+						<div><a href="#">Send an email</a></div>
+						<div>Phone: 8 (800) 555 35-35</div>
+					</div>
+				</div>
+				<div class="greyblock">
+					<div class="text_footer">
+						<p>Subscribe to Email newsletter</p>
+						<div><input class="input_form"></div>
+						<button class="button_sub">Subscribe</button>
+					</div>
+				</div>
+				<div class="greyblock">
+					<div class="text_footer">
+						<p>We in social network</p>
+						<div>
+							<a href="#">Instagram</a>
+						</div>
+						<div>
+							<a href="#">Twitter</a>
+						</div>
+						<div>
+							<a href="#">VKontakte</a>
+						</div>
+						<div>
+							<a href="#">Facebook</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% block scripts %}
+		{% endblock %}
+	</body>
+</html>
+
+
+

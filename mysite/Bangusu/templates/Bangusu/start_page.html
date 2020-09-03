@@ -1,0 +1,69 @@
+{% extends "Bangusu/base.html" %}
+{% load static %}
+<head>
+	{% block title %}
+		shop/n/Bangusu
+	{% endblock title %}
+	
+	{% block style %}
+		<link rel="stylesheet" href="{% static 'Bangusu/css/startp_style.css' %}"> 
+	{% endblock style %}
+</head>
+
+{% block content %}
+	<main>
+		<div class="woman_block">
+			<div class="img_container_w">
+				<div class="woman_img"><img src="{% static 'Bangusu/img/w_main.png' %}" alt="img" /></div>
+			</div>
+			<div class="for_woman"><a href="{% url 'bnsu:w_page' %}">for woman</a></div>
+		</div>
+		<div class="all_container">
+			<div class="all_bl"><a href="{% url 'bnsu:all_page' %}">all</a></div>
+		</div>
+		<div class="man_block">
+			<div class="for_man"><a href="{% url 'bnsu:m_page' %}">for man</a></div>
+			<div class="img_container_m">
+				<div class="man_img"><img src="{% static 'Bangusu/img/m_main.png' %}" alt="img" /></div>
+			</div>
+		</div>
+	</main>
+
+	<div class="form-wrapper reg" id="openRegForm">
+		<form class="contact-form" id="contact-form_2">
+			<div class="close-popup js-close-campaing" onclick="closeRegForm()"></div>
+			<p class="contact-form__title">Sign up</p>
+			<div class="descript_form">Name</div>
+			<div class="contact-form__input-wrapper">
+				<input name="name" type="text" class="contact-form__input contact-form__input_name" placeholder="">
+				<div class="contact-form__error contact-form__error_name"></div>
+			</div>
+			<div class="descript_form">Email</div>
+			<div class="contact-form__input-wrapper">
+				<input name="name" type="email" class="contact-form__input contact-form__input_name" placeholder="">
+				<div class="contact-form__error contact-form__error_name"></div>
+			</div>
+			<div class="descript_form">Password</div>
+			<div class="contact-form__input-wrapper">
+				<input name="email" type="password" class="contact-form__input contact-form__input_email" placeholder="">
+				<div class="contact-form__error contact-form__error_email"></div>
+			</div>
+			<div class="descript_form">Repeat password</div>
+			<div class="contact-form__input-wrapper">
+				<input name="email" type="password" class="contact-form__input contact-form__input_email" placeholder="">
+				<div class="contact-form__error contact-form__error_email"></div>
+			</div>
+			<div class="privatesogl">
+				<input type="checkbox" class="custom-checkbox pad-chek" id="wear_check" name="wear" value="yes" checked="enabled">
+				<label for="wear_check"></label>
+				<a>Я принимаю “Условия пользовательского соглашения</a>
+			</div>
+			<button class="contact-form__button button-reg" type="submit">Зарегистрироваться</button>
+			<div class="descript_form1" onclick="openLogForm()">войти</div>
+		</form>
+	</div>
+
+
+	<script src="{% static 'Bangusu/js/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'Bangusu/js/main.js' %}"></script>
+{% endblock content %}

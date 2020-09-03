@@ -1,0 +1,287 @@
+@font-face {
+	font-family: "Raleway";
+	src: url('../fonts/RalewayRegular.eot');
+	src: url('../fonts/RalewayRegular.eot?#iefix')format('embedded-opentype'),
+		url('../fonts/RalewayRegular.woff') format('woff'),
+		url('../fonts/RalewayRegular.ttf') format('truetype');
+	font-style: normal;
+}
+
+/* - regular  */
+
+body {
+	font-family: Raleway, sans-serif;
+	font-weight: lighter;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+button:active,
+button:focus {
+	outline: none;
+}
+
+/* header */
+
+.header {
+	height: auto;
+	list-style: none;
+	border: 1px black;
+	margin-bottom: 50px;
+	border-style: none none solid none;
+}
+
+.message_s {
+    display: none;
+}
+
+.header div {
+	display: inline-block;
+	font-size: 22px;
+}
+
+.logo_wrapper_left {
+	padding: 13px 0 13px 20px;
+}
+
+.action_wrapper_right {
+    width: 337px;
+	float: right;
+	display: flex;
+	border: 1px black;
+	border-style: none none none solid;
+}
+
+.loginlink {
+    width: 180px;
+}
+
+.action_wrapper_right .loginlink {
+	padding: 13px 0 13px 0;
+	margin-left: 28px;
+}
+
+.nule {
+    align-content: center;
+}
+
+.actions {
+    text-align: end;
+    margin: 0;
+    width: 110px;
+}
+
+.menubutton {
+    cursor: pointer;
+    height: 53px;
+}
+
+.action_wrapper_right a {
+	margin-right: 10px;
+	display: inline-flex;
+	vertical-align: middle;
+}
+
+.actions button {
+	padding: 13px 0 13px 0;
+	margin-right: 15px;
+	background: none;
+	border-style: none;
+	vertical-align: middle;
+}
+
+/* body block  */
+
+.item_card_info {
+	display: flex;
+	width: auto;
+	height: auto;
+	margin: 0px 80px -1px 80px;
+	justify-content: center;
+}
+
+.dontcare { 
+	width: 100%;
+	display: inline-block;
+}
+
+.item_rula {
+	float: right;
+	margin: 10px 0 10px 0;
+}
+
+.item_rula a:hover {
+    color: red;
+}
+
+.img_container {
+	display: flex;
+	width: auto;
+	height: auto;
+}
+
+.prod_img_1 {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	filter: grayscale(15%);
+	height: 300px;
+	box-shadow: 1px 1px 13px rgba(0, 0, 0, 0.1);
+	width: 220px;
+}
+
+.new {
+	width: 100%;
+	margin: 0px 10px 0px 25px;
+}
+
+.item_description_short {
+	width: 100%;
+	display: flex;
+	font-size: 15px;
+	letter-spacing: 0.045em;
+	padding: 20px;
+	background: #FFFFFF;
+	border: 1px solid black;
+	"""#EFEFEF-->"""
+}
+
+.total_price {
+    display: flex;
+	font-size: 20px;
+	padding: 20px;
+	letter-spacing: 0.045em;
+    border: 1px solid black;
+    margin: 25px 80px 1px 80px;
+}
+
+.su, .kk {
+    width: 100%;
+}
+
+.kk {
+    text-align: end;
+}
+
+.suka {
+	margin-top: 160px;
+	display: inline-block;
+	width: 100%;
+	justify-content: center;
+	text-align: center;
+}
+
+.suka div {
+	font-size: 18px;
+	width: auto; 
+}
+
+.item_name {
+	float: left;
+	margin: 10px 0 10px 0;
+	width: auto;
+}
+
+.item_price, 
+.info_about_harak {
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+
+.item_count {
+	float: left;
+}
+
+.a_line {
+    text-content: center;
+}
+
+.item_count a {
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.item_price1{
+	float: right;
+}
+
+
+/* footer block */
+
+.footer {
+	margin-top: 80px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-weight: lighter;
+	letter-spacing: 0.03em;
+	font-size: 15px;
+	border: 1px solid;
+	border-style: solid none none none;
+}
+
+.wewe {
+	display: flex;
+	padding-top: 167px;
+	padding-bottom: 167px;
+}
+
+.greyblock,
+.orblock {
+	width: 336px;
+	height: 300px;
+	border: 1px black;
+	border-style: solid solid solid none;
+}
+
+.orblock {
+	background-color: #B6A475
+}
+
+.orblock:first-child {
+	border: 1px solid black;
+}
+
+.greyblock {
+	background-color: #CACACA
+}
+
+.orblock .greyblock,
+.text_footer {
+	margin-top: 25px;
+	margin-left: 25px;
+}
+
+.text_footer a {
+	text-decoration: underline;
+}
+
+.text_footer div {
+	margin-info_addbottom: 15px;
+}
+
+.input_form {
+	margin: 5px 0px;
+	padding: 9px 10px;
+	width: 230px;
+	letter-spacing: 0.03em;
+	font-size: 12px;
+	font-family: inherit;
+	border: 1px solid black;
+}
+
+.button_sub {
+	font-size: 15px;
+	letter-spacing: 0.03em;
+	padding: 8px 27px 8px 27px;
+	color: white;
+	font-family: Raleway;
+	border: 1px solid black;
+	background-color: #000000;
+}

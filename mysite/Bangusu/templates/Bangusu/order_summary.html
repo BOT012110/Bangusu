@@ -1,0 +1,49 @@
+{% extends 'Bangusu/base.html' %}
+{% load static %}
+
+{% block title %}
+	shop/n/Bangusu/order_summary
+{% endblock title %}
+
+{% block style %}
+	<link rel="stylesheet" href="{% static 'Bangusu/css/order_summary_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% for order_item in object.items.all %}
+	<div class="item_card_info">
+		<div class="item_description_short">
+			<div class="img_container">
+				<div class="prod_img_1" style='background-image: url("../../../..{{ order_item.item.image.url }}");'></div>
+			</div>
+			<div class="new">
+				<div class="dontcare">
+					<h3 class="item_name">{{ order_item.item.name }}</h3>
+					<div class="item_rula"><a href="{% url 'bnsu:remove-from-cart' order_item.item.slug %}">DELETE</a></div>
+				</div>
+				<div class="info_about_harak">Size: {{ order_item.item.size }}</div>
+				<div class="item_price">Price: {{ order_item.item.price }}</div>
+
+				<div class="suka">
+					<div class="item_count">
+						<a href="{% url 'bnsu:remove-single-item-from-cart' order_item.item.slug %}" class="a_line">-</a>
+						{{ order_item.stock }}
+						<a href="{% url 'bnsu:add-single-item-to-cart' order_item.item.slug %}" class="a_line">+</a></div>
+					<div class="item_price1">{{ order_item.get_total_item_price }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+	<div class="total_price">
+		<div class="su">Итого:</div>
+		<div class="kk">{{ object.get_total }}</div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+	<script src="{% static 'Bangusu/js/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'Bangusu/js/main.js' %}"></script>
+{% endblock %}
+

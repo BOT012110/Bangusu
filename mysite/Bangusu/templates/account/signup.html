@@ -1,0 +1,32 @@
+{% extends "account/base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block extra_head %}
+  <link rel="stylesheet" href="{% static 'Bangusu/css/login_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="header">
+  <div class="logo_wrapper_left" style="letter-spacing: 0.335em">
+      <a class="homelogolink" href="{% url 'bnsu:start_page' %}">Bangusu</a>
+  </div>
+</div>
+
+<div class="form-wrapper log">
+  <h1>{% trans "Sign Up" %}</h1>
+
+  <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <button class="contact-form__button dum" type="submit">Зарегестрироваться</button>
+    <div class="descript_form1">
+      <a href="{{ login_url }}">Уже есть аккаунт ?</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

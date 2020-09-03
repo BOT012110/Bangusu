@@ -1,0 +1,37 @@
+{% extends 'Bangusu/base.html' %}
+{% load static %}
+
+{% block title %}
+	shop/n/Bangusu/Woman
+{% endblock %}
+
+{% block style %}
+	<link rel="stylesheet" href="{% static 'Bangusu/css/all_page_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!--	<form action="{% url 'bnsu:w_page' %}" method="get">
+		<div class="filter">
+			{% for category in view.get_category %}
+				<div>{{ category.categryyn }}
+					<input type="checkbox" class="custom-checkbox" name="name" value="{{ category.name }}">
+				</div>
+			{% endfor %}
+		</div>
+		<div class="apply_filter">
+			<button type="submit" class="button_apply">Apply</button>
+		</div>
+	</form> -->
+	<main>
+		<div class="container_productsM">
+			{% for img in image %}
+				<div class="item">
+					<div class="imgerovka" style='background-image: url("../../../..{{ img.image.url }}");'></div>
+					<div class="name"><a href="{% url 'bnsu:product_detail' img.slug %}">{{ img.name }}</a></div>
+					<div class="price">{{ img.price }} rub.</div>
+				</div>
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}

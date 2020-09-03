@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Bangusu/login</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="{% static 'Bangusu/css/login_style.css' %}">
+</head>
+
+<body>
+	<div class="header">
+		<div class="logo_wrapper_left" style="letter-spacing: 0.335em">
+			<a class="homelogolink" href="{% url 'bnsu:start_page' %}">Bangusu</a>
+		</div>
+		<div class="action_wrapper_right">
+			<a class="loginlink" href="{% url 'login' %}" style="letter-spacing: 0.335em">log in</a>
+			<div class="actions">
+				<a class="trashlink" href="#"><img src="{% static 'Bangusu/img/icon/Trash.png' %}" alt="img" /></a>
+				<button class="menubutton"><img src="{% static 'Bangusu/img/icon/menu_button.png' %}" alt="img" /></button>
+			</div>
+		</div>
+	</div>
+
+    {% if form.errors %}
+      <p class="centerbtch">Your username or password didn't match. Please try again.</p>
+    {% endif %}
+
+    {% if next %}
+      {% if user.is_authenticated %}
+        <p>Your account doesn't have access to this page. To proceed,
+        please login with an account that has access.</p>
+      {% else %}
+        <p>Please login to see this page.</p>
+      {% endif %}
+    {% endif %}
+
+	<div class="form-wrapper log" id="openLogForm">
+		<form class="contact-form" id="contact-form_1" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+			<p class="contact-form__title">Sign in</p>
+			<div class="descript_form">Email</div>
+			<!--            {{ form.username.label_tag }}-->
+			<div class="contact-form__input-wrapper">
+				<input type="text" class="contact-form__input contact-form__input_name" name="username" autofocus=""
+                       autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+				<!--				<input name="name" type="email" class="contact-form__input contact-form__input_name" placeholder="">-->
+				<!--                {{ form.username }}-->
+				<div class="contact-form__error contact-form__error_name"></div>
+			</div>
+			<div class="descript_form">Password</div>
+			<div class="contact-form__input-wrapper">
+				<input type="password" class="contact-form__input contact-form__input_email" name="password"
+                       autocomplete="current-password" required="" id="id_password">
+			</div>
+			<button class="contact-form__button" type="submit">Log in</button>
+			<input type="hidden" name="next" value="{{ next }}" />
+			<div class="descript_form1" onclick="openRegForm()">don't have account ?</div>
+		</form>
+	</div>
+</body>
+</html>
+
+
+	<!--  <td>{{ form.password.label_tag }}</td>-->
+	<!--  <td>{{ form.password }}</td>-->

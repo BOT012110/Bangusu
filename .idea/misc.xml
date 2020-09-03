@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/mysite/Bangusu/migrations/0001_initial.py" />
+    <file url="file://$PROJECT_DIR$/mysite/Bangusu/migrations/0002_auto_20200814_1144.py" />
+    <file url="file://$PROJECT_DIR$/mysite/Bangusu/migrations/0003_auto_20200815_2342.py" />
+    <file url="file://$PROJECT_DIR$/mysite/Bangusu/migrations/0004_auto_20200817_1401.py" />
+    <file url="file://$PROJECT_DIR$/mysite/Bangusu/migrations/0005_auto_20200818_1341.py" />
+    <file url="file://$PROJECT_DIR$/mysite/Bangusu/migrations/0006_auto_20200818_1546.py" />
+    <file url="file://$PROJECT_DIR$/mysite/Bangusu/migrations/0007_account.py" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (ofturdj)" project-jdk-type="Python SDK" />
+  <component name="PyCharmProfessionalAdvertiser">
+    <option name="shown" value="true" />
+  </component>
+</project>
